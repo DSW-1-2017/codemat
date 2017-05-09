@@ -20,9 +20,25 @@ class DojosController < ApplicationController
 
 		if @dojo.save
 			# Ok
+			redirect_to @dojo
 		else
 			# TODO: Error saving the dojo
 			raise "Error"
+		end
+
+	end
+
+	def show
+		@dojo = Dojo.find(params[:id])
+		if (@dojo)
+			@category = @dojo.categorizable.class.name
+
+			# renders dojos_kata_show, dojos_randori_show
+			viewToRender = @category.tr('::', '').underscore + '_show'
+			render viewToRender
+		else
+			# Dojo not found
+
 		end
 
 	end
