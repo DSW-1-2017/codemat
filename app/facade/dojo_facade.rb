@@ -1,0 +1,2 @@
+class DojoFacade
+end

@@ -10,23 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170414224842) do
+ActiveRecord::Schema.define(version: 20170510094241) do
 
   create_table "dojos", force: :cascade do |t|
     t.integer "user_id"
     t.string "title"
+    t.text "description"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.integer "coding_time"
+    t.integer "break_time"
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "theme_id"
+    t.index ["theme_id"], name: "index_dojos_on_theme_id"
     t.index ["user_id"], name: "index_dojos_on_user_id"
   end
 
-  create_table "kata", force: :cascade do |t|
+  create_table "locations", force: :cascade do |t|
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.integer "user_id"
+    t.integer "dojo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["dojo_id"], name: "index_locations_on_dojo_id"
+    t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
-  create_table "randoris", force: :cascade do |t|
+  create_table "notifications", force: :cascade do |t|
+    t.integer "user_id"
+    t.boolean "active", default: true
+    t.text "message"
+    t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
+  create_table "notifiers_observers", force: :cascade do |t|
+    t.integer "theme_id"
+    t.integer "user_id"
+    t.index ["theme_id"], name: "index_notifiers_observers_on_theme_id"
+    t.index ["user_id"], name: "index_notifiers_observers_on_user_id"
+  end
+
+  create_table "themes", force: :cascade do |t|
+    t.string "name"
+    t.string "icon_name"
+    t.string "theme_background"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -39,6 +73,14 @@ ActiveRecord::Schema.define(version: 20170414224842) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string "source"
+    t.integer "dojo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dojo_id"], name: "index_videos_on_dojo_id"
   end
 
 end

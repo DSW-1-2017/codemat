@@ -1,0 +1,18 @@
+<%= form_for @location do |f|%>
+<div class="row">
+	<div class="col-6 offset-md-4">
+		<div class="col-6">
+			<div class="form-group">
+				<label for="first_name">Endereço</label>
+				<%= f.text_field :address, id: :address_location, class: 'form-control' %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-6">
+				<%= f.submit "Submit", class: "btn btn-primary" %>
+			</div>
+	</div>
+	</div>
+</div>
+<% end %>

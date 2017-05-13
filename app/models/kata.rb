@@ -1,2 +1,1 @@
-class Kata < Dojo
-end
+class Kata < Dojo; end

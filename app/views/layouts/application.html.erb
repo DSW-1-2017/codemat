@@ -1,48 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LearnMeeting</title>
+    <title>Codemat</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-     <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
   </head>
 
   <body>
-	<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="container">
-            <a class="navbar-brand" href="#">Codemat</a>
-            <div class="collapse navbar-collapse" id="navbarExample">
-                <ul class="navbar-nav ml-auto">
-                <% if current_user %>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/dojos/new">Criar Dojo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/logout">Sair</a>
-                    </li>
-                <% else %>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Entrar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/users/new">Nova Conta</a>
-                    </li>
-                <% end %>     
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
-  	<div class="container">
-  		<%= yield %>
-  	</div>
+    <%= render partial: (current_user ? 'dashboard/header' : 'layouts/navbar') %>
+    <div id="<%= current_user ? "page-wrapper" : "wrapper-content" %>">
+      <div style="padding:20px;">
+        <% flash.each do |name, msg| %>
+          <%= content_tag(:div, msg, class: "alert alert-info") %>
+        <% end %>
+        <%= yield %>
+      </div>
+    </div>
+
+    <%= render partial: 'layouts/footer' %>
   </body>
 </html>

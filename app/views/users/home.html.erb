@@ -1,0 +1,12 @@
+<div class="row">
+	<div class="col-6 offset-md-3">
+		<h3>Início</h3>
+	</div>
+</div>
+
+<%= @my_themes.each do |theme| %>
+  <div class="row">
+    <%= theme.name %>
+  </div><!-- class="row" -->
+
+<% end %>

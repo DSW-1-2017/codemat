@@ -1,0 +1,70 @@
+<%= form_for @dojo do |f| %>
+  <div class="row">
+    <div class="col-6 offset-md-4">
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="title">Título</label>
+            <%= f.text_field :title, id: 'title', class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="category">Categoria</label>
+            <select name="dojo[category]" class="form-control" id="category">
+              <option>randori</option>
+              <option>kata</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="theme">Tema</label>
+            <%= f.collection_select(:theme_id, @themes, :id, :name, {}, {class: "form-control"}) %>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="title">Início</label>
+            <%= f.datetime_field :starts_at, id: 'starts_at', class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+
+      <%= form_for @location do |l|%>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="title">Endereço</label>
+              <%= l.text_field :address, id: 'address', class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+
+          <%= form_for @video do |v|%>
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="title">Link do Video</label>
+                  <%= v.text_field :source, id: 'source', class: 'form-control' %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+      <% end %>
+
+
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

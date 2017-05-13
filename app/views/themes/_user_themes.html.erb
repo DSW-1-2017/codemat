@@ -1,0 +1,58 @@
+<!-- Nav tabs -->
+<ul class="nav nav-pills">
+    <li class="active"><a href="#following-pills" data-toggle="tab">Temas que Sigo</a>
+    </li>
+    <li><a href="#to-follow-pills" data-toggle="tab">Temas para Seguir</a>
+    </li>
+    <li><a href="#best-pills" data-toggle="tab">Populares</a>
+    </li>
+</ul>
+
+<hr>
+
+<!-- Tab panes -->
+<div class="tab-content">
+    <div class="tab-pane fade in active" id="following-pills">
+        <h4>Temas que Sigo</h4>
+        <div class="container">
+          <section id="dojo" class="content-section text-center">
+            <div class='col-md-12 no-horizontal-padding'>
+              <div class='row'>
+                <% current_user.theme_notifiers.each do |theme| %>
+                  <div id='tRow' class='col-md-4 col-sm-6 col-xs-12 tiles'>
+                    <%= link_to unfollow_path(id: theme.id),:onclick => "history.go(0)", method: :post, remote: true do %>
+                      <% icon_class = "fa " + theme.icon_name.to_s %>
+                      <div class='text-center'><i  class="<%=theme.icon_name.to_s%>"%></i></div>
+                    <% end %>
+                    <h4><%= theme.name %></h4>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </section>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="to-follow-pills">
+        <h4>Temas para Seguir</h4>
+        <div class="container">
+          <section id="dojo" class="content-section text-center">
+            <div class='col-md-12 no-horizontal-padding'>
+              <div class='row'>
+                <% current_user.themes_i_am_not_observer.each do |theme| %>
+                  <div id='tRow' class='col-md-4 col-sm-6 col-xs-12 tiles'>
+                    <%= link_to follow_path(id: theme.id), :onclick => "history.go(0)", method: :post, remote: true do %>
+                      <div class='text-center'><i class="<%=theme.icon_name.to_s%>"></i></div>
+                    <% end %>
+                   <h4><%= theme.name %></h4>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </section>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="best-pills">
+        <h4>Temas Populares</h4>
+        <p>Esta funcionalidade estará disponível em breve.</p>
+    </div>
+</div>

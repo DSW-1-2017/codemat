@@ -1,3 +1,269 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+   width: 100%;
+}
+ .homePageMainSection {
+  height: 490px;
+  width: 100%;
+  background-color: #f3f3f3;
+  background: url('http://henriquedutra.com.br/wp-content/uploads/2017/04/header.png') center 30% no-repeat;
+  background-size: cover;
+  padding-left: 40px;
+}
+.logo-font-header {
+  line-height: 1;
+  color: #ffffff;
+
+}
+.slogan-header {
+  font-size: 75px;
+  padding-top: 12%;
+  font-weight: 100;
+}
+.sub-slogan-header {
+  font-size: 21px;
+  padding-top: 24px;
+  padding-bottom: 14px;
+  font-weight: 300;
+}
+
+.content-section-b {
+	border-top: 1px solid #e7e7e7;
+	border-bottom: 1px solid #e7e7e7;
+	padding: 90px 0; 
+}
+
+#dojo {
+  margin-right: 15px;
+}
+
+.tiles {
+  margin-right: 0;
+  margin-left: 0;
+  float: left;
+  height: 21rem;
+  position: relative;
+}
+
+.tiles .fa {
+  padding-top: 7rem;
+  font-size: 8rem;
+}
+
+.tiles a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease 0s;
+}
+
+.tiles a:hover {
+ color: #42DCA3;
+}
+
+#t1{ background: #FFC35F;}
+#t2{ background: #E3625F;}
+#t3{ background: #65A4ED;}
+#t4{ background: #65A4ED;}
+#t5{ background: #FFC35F;}
+#t6{ background: #E3625F;}
+#t7{ background: #E3625F;}
+#t8{ background: #65A4ED;}
+#t9{ background: #FFC35F;}
+
+.row.title {
+	padding: 0 20px;
+}
+
+.tiles {
+  position: relative;
+  overflow: hidden;
+  bottom: 0;
+}
+.tiles:hover h4 {
+  bottom: 0;
+}
+
+.tiles h4 {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0;
+  padding-left: 3rem;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  padding-right: 2rem;
+  color: #FFF;
+  height: auto;
+  bottom: -10rem;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.55) none repeat scroll 0% 0%;
+  transition: all 0.3s;
+}
+
+content-section {
+   padding-top: 100px;
+}
+
+.footer-distributed{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: normal 16px sans-serif;
+
+	padding: 45px 50px;
+}
+
+.footer-distributed .footer-left p{
+	color:  #8f9296;
+	font-size: 14px;
+	margin: 0;
+}
+
+/* Footer links */
+
+.footer-distributed p.footer-links{
+	font-size:18px;
+	font-weight: bold;
+	color:  #ffffff;
+	margin: 0 0 10px;
+	padding: 0;
+}
+
+.footer-distributed p.footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-right{
+	float: right;
+	margin-top: 6px;
+	max-width: 180px;
+}
+
+.footer-distributed .footer-right a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-left: 3px;
+}
+
+@media (max-width: 600px) {
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-right{
+		text-align: center;
+	}
+
+	.footer-distributed .footer-right{
+		float: none;
+		margin: 0 auto 20px;
+	}
+
+	.footer-distributed .footer-left p.footer-links{
+		line-height: 1.8;
+	}
+}
+
+
+.services {
+	margin: 40px 0;
+}
+
+.service {
+	width: 100%;
+	height: 320px;
+	margin: 80px 0;
+	text-align: center;
+	border: 1px solid #ddd;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.service .icon-holder {
+	position: relative;
+	top: 100px;
+	display: inline-block;
+	margin-bottom: 40px;
+	padding: 10px;
+	background: white;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.service .heading {
+	position: relative;
+	top: 80px;
+	-webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.service .icon-holder > img.icon {
+	width: 40px;
+}
+
+.service:hover {
+	border-color: #00a8ff;
+}
+
+.service:hover .icon-holder {
+	top: -30px;
+}
+
+.service:hover .heading {
+	top: -30px;
+}
+
+.service .description {
+	width: 80%;
+	margin: 0 auto;
+	opacity: 0;
+	-webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	-webkit-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
+}
+
+.service:hover .description {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+}
+
+.logo-font-explanation {
+  line-height: 1;
+  color: #343434;
+}
+.sub-slogan-explanation {
+  font-size: 41px;
+  padding-top: 24px;
+  padding-bottom: 14px;
+  font-weight: 500;
+}
+.title{
+	justify-content: center;
+}
+.muted {
+	color: #989da0;
+}
+
+.light {
+	font-weight: 300;
+}
+
+.regular {
+	font-weight: 400;
+}
+

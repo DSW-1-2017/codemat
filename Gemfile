@@ -5,7 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'bootstrap', '~> 4.0.0.alpha6'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
@@ -17,6 +16,10 @@ gem 'rails', '~> 5.1.0.rc1'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', github: "rails/sass-rails"
+# Use a Free Bootstrap Template
+gem 'bootstrap_sb_admin_base_v2'
+gem 'font-awesome-rails'
+gem 'font-mfizz-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -36,6 +39,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# Geolocation gem
+gem 'geocoder'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'

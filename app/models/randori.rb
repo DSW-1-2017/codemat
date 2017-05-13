@@ -1,2 +1,1 @@
-class Randori < Dojo
-end
+class Randori < Dojo; end

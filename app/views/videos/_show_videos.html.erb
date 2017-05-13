@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+    <% @videos.each do |video| %>
+        <div class="col-sm-7 col-lg-6">
+            <iframe width="400" height="225" src="<%= video.source %>"></iframe>
+            <p>Conteudo do dojo</p>
+            <a href="">Link dos detalhes do dojo</a>
+        </div>
+        <% end %>
+    </div>
+</div>
